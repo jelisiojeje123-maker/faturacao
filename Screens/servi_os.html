@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Invoicify Pro - Serviços</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-high": "#e7e7f3",
+                        "on-error": "#ffffff",
+                        "surface-container": "#ededf9",
+                        "surface-container-low": "#f3f3fe",
+                        "outline": "#737686",
+                        "on-secondary-fixed-variant": "#3c475a",
+                        "on-secondary-container": "#586377",
+                        "surface-container-highest": "#e1e2ed",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-container": "#bc4800",
+                        "on-tertiary-fixed": "#360f00",
+                        "background": "#faf8ff",
+                        "error": "#ba1a1a",
+                        "on-surface-variant": "#434655",
+                        "primary-container": "#2563eb",
+                        "on-primary-container": "#eeefff",
+                        "inverse-on-surface": "#f0f0fb",
+                        "surface-container-lowest": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "surface-bright": "#faf8ff",
+                        "surface": "#faf8ff",
+                        "tertiary-fixed": "#ffdbcd",
+                        "on-error-container": "#93000a",
+                        "inverse-primary": "#b4c5ff",
+                        "primary-fixed-dim": "#b4c5ff",
+                        "on-secondary-fixed": "#111c2d",
+                        "surface-variant": "#e1e2ed",
+                        "primary-fixed": "#dbe1ff",
+                        "secondary-container": "#d5e0f8",
+                        "primary": "#004ac6",
+                        "on-primary-fixed-variant": "#003ea8",
+                        "on-primary-fixed": "#00174b",
+                        "secondary-fixed-dim": "#bcc7de",
+                        "outline-variant": "#c3c6d7",
+                        "on-tertiary-container": "#ffede6",
+                        "surface-tint": "#0053db",
+                        "on-primary": "#ffffff",
+                        "surface-dim": "#d9d9e5",
+                        "secondary-fixed": "#d8e3fb",
+                        "on-secondary": "#ffffff",
+                        "on-surface": "#191b23",
+                        "inverse-surface": "#2e3039",
+                        "tertiary-fixed-dim": "#ffb596",
+                        "on-tertiary-fixed-variant": "#7d2d00",
+                        "on-background": "#191b23",
+                        "secondary": "#545f73",
+                        "tertiary": "#943700"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Inter"],
+                        "display": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background antialiased flex overflow-hidden">
+<!-- SideNavBar -->
+<aside class="bg-[#1E293B] font-['Inter'] text-sm tracking-tight fixed left-0 top-0 h-screen w-[280px] border-r border-slate-700 shadow-xl flex flex-col h-full py-6 z-50">
+<div class="px-6 mb-8 flex items-center gap-3">
+<div class="w-10 h-10 bg-primary-container rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-white" data-icon="payments">payments</span>
+</div>
+<div>
+<h1 class="text-lg font-black text-white leading-none">Invoicify Pro</h1>
+<p class="text-slate-400 text-xs mt-1">Financial Management</p>
+</div>
+</div>
+<div class="flex-1 space-y-1">
+<!-- Dashboard Tab -->
+<a class="text-slate-400 hover:text-white flex items-center px-4 py-3 mx-2 my-1 hover:bg-slate-800 rounded-lg transition-all duration-200 cursor-pointer active:opacity-80" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="dashboard">dashboard</span>
+                Dashboard
+            </a>
+<!-- Clientes Tab -->
+<a class="text-slate-400 hover:text-white flex items-center px-4 py-3 mx-2 my-1 hover:bg-slate-800 rounded-lg transition-all duration-200 cursor-pointer active:opacity-80" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="group">group</span>
+                Clientes
+            </a>
+<!-- Serviços Tab (ACTIVE) -->
+<a class="bg-blue-600 text-white rounded-lg mx-2 my-1 flex items-center px-4 py-3 cursor-pointer active:opacity-80 scale-100 hover:scale-[1.02] active:scale-95 transition-transform" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="receipt_long">receipt_long</span>
+                Serviços
+            </a>
+<!-- Faturas Tab -->
+<a class="text-slate-400 hover:text-white flex items-center px-4 py-3 mx-2 my-1 hover:bg-slate-800 rounded-lg transition-all duration-200 cursor-pointer active:opacity-80" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="description">description</span>
+                Faturas
+            </a>
+<!-- Criar Fatura Tab -->
+<a class="text-slate-400 hover:text-white flex items-center px-4 py-3 mx-2 my-1 hover:bg-slate-800 rounded-lg transition-all duration-200 cursor-pointer active:opacity-80" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="add_circle">add_circle</span>
+                Criar Fatura
+            </a>
+<!-- Pagamentos Tab -->
+<a class="text-slate-400 hover:text-white flex items-center px-4 py-3 mx-2 my-1 hover:bg-slate-800 rounded-lg transition-all duration-200 cursor-pointer active:opacity-80" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="payments">payments</span>
+                Pagamentos
+            </a>
+<!-- Relatórios Tab -->
+<a class="text-slate-400 hover:text-white flex items-center px-4 py-3 mx-2 my-1 hover:bg-slate-800 rounded-lg transition-all duration-200 cursor-pointer active:opacity-80" href="#">
+<span class="material-symbols-outlined mr-3" data-icon="bar_chart">bar_chart</span>
+                Relatórios
+            </a>
+</div>
+<div class="mt-auto px-4">
+<button class="w-full bg-blue-600 text-white font-bold py-3 px-4 rounded-xl flex items-center justify-center gap-2 hover:bg-blue-700 transition-colors shadow-lg">
+<span class="material-symbols-outlined text-sm" data-icon="add">add</span>
+                New Invoice
+            </button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 ml-[280px] h-screen overflow-y-auto flex flex-col">
+<!-- TopAppBar -->
+<header class="bg-white dark:bg-slate-900 font-['Inter'] text-sm antialiased docked full-width top-0 sticky z-40 border-b border-slate-200 dark:border-slate-800 shadow-sm flex items-center justify-between px-6 py-3 w-full ml-auto">
+<div class="flex items-center gap-6 flex-1">
+<div class="relative w-full max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" data-icon="search">search</span>
+<input class="w-full bg-slate-50 border-none rounded-lg py-2 pl-10 pr-4 text-sm focus:ring-2 focus:ring-blue-600 transition-all" placeholder="Search services..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-1">
+<button class="p-2 text-slate-500 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-full transition-colors cursor-pointer">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 text-slate-500 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-full transition-colors cursor-pointer">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+</button>
+<button class="p-2 text-slate-500 hover:bg-slate-50 dark:hover:bg-slate-800 rounded-full transition-colors cursor-pointer">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+</div>
+<div class="h-8 w-[1px] bg-slate-200 dark:bg-slate-700 mx-2"></div>
+<div class="flex items-center gap-3 cursor-pointer active:opacity-80">
+<img alt="User profile photo" class="w-9 h-9 rounded-full object-cover border border-slate-200" data-alt="professional headshot of a middle-aged businessman with a friendly expression in a modern office environment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPP8hhVp-Rtvuj35SyQhbPqjIamFjVxhj700c5sZKbz4Ng6ZZKSwRNtYlOpvxhDTSm7Ts2cvBsFnqmMNlFVeypj3iX6eQZ2dNhJ-KQVyLsErqx9Bj4H5D8zqYF3ThuzWQkWfRZAsJ04VZqYbVHVNrbi3vHbIf-nu6D7m9yJsqvAV3C4F43tUtibYNSdlmBSJoRd40F4J1P9CzViBbi1ZSlQP79nFRn5nfkYBrsyXEWMkIb1oO2TBWGXR4Q5YqexXg3ToxHeAsM6Gg"/>
+<div class="hidden lg:block text-right">
+<p class="font-semibold text-slate-900 dark:text-white leading-none">Alex Rivera</p>
+<p class="text-xs text-slate-500 mt-1">Admin Account</p>
+</div>
+</div>
+</div>
+</header>
+<!-- Canvas Area -->
+<div class="p-8 space-y-8 max-w-[1440px] w-full mx-auto">
+<!-- Page Header -->
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div>
+<h2 class="text-3xl font-extrabold text-slate-900 tracking-tight">Serviços</h2>
+<p class="text-slate-500 mt-1">Manage and organize your billable services and subscription items.</p>
+</div>
+<button class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-xl shadow-md flex items-center gap-2 transition-all active:scale-95">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+                    Create Service
+                </button>
+</div>
+<!-- Dashboard Stats Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="bg-white p-6 rounded-xl shadow-sm border border-slate-50 flex items-center gap-4">
+<div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="inventory_2">inventory_2</span>
+</div>
+<div>
+<p class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Total Services</p>
+<p class="text-2xl font-bold text-slate-900">42</p>
+</div>
+</div>
+<div class="bg-white p-6 rounded-xl shadow-sm border border-slate-50 flex items-center gap-4">
+<div class="w-12 h-12 bg-green-50 text-green-600 rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="autorenew">autorenew</span>
+</div>
+<div>
+<p class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Recurring Items</p>
+<p class="text-2xl font-bold text-slate-900">18</p>
+</div>
+</div>
+<div class="bg-white p-6 rounded-xl shadow-sm border border-slate-50 flex items-center gap-4">
+<div class="w-12 h-12 bg-orange-50 text-orange-600 rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+</div>
+<div>
+<p class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Avg. Price</p>
+<p class="text-2xl font-bold text-slate-900">R$ 1.420,00</p>
+</div>
+</div>
+</div>
+<!-- Services Table Card -->
+<div class="bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden">
+<div class="px-6 py-4 border-b border-slate-100 flex items-center justify-between">
+<div class="flex items-center gap-4">
+<button class="px-4 py-2 bg-slate-50 text-slate-900 text-sm font-semibold rounded-lg border border-slate-200">All Services</button>
+<button class="px-4 py-2 text-slate-500 text-sm font-medium hover:bg-slate-50 rounded-lg transition-colors">Drafts</button>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 text-slate-400 hover:text-slate-600 transition-colors">
+<span class="material-symbols-outlined" data-icon="filter_list">filter_list</span>
+</button>
+<button class="p-2 text-slate-400 hover:text-slate-600 transition-colors">
+<span class="material-symbols-outlined" data-icon="download">download</span>
+</button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-slate-50/50 text-slate-500 text-xs font-bold uppercase tracking-wider">
+<th class="px-6 py-4">Service Name</th>
+<th class="px-6 py-4">Type</th>
+<th class="px-6 py-4">Category</th>
+<th class="px-6 py-4 text-right">Price</th>
+<th class="px-6 py-4 text-center">Status</th>
+<th class="px-6 py-4 w-20"></th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100">
+<!-- Row 1 -->
+<tr class="hover:bg-slate-50 transition-colors group">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-blue-100 flex items-center justify-center text-blue-600">
+<span class="material-symbols-outlined" data-icon="cloud_queue">cloud_queue</span>
+</div>
+<div>
+<p class="font-semibold text-slate-900">Cloud Maintenance (Premium)</p>
+<p class="text-xs text-slate-400 mt-0.5">ID: SRV-2049</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="px-3 py-1 bg-blue-100 text-blue-700 text-xs font-bold rounded-full">Recurring</span>
+</td>
+<td class="px-6 py-4 text-sm text-slate-600 font-medium">IT Infrastructure</td>
+<td class="px-6 py-4 text-right">
+<p class="font-bold text-slate-900">R$ 2.500,00</p>
+<p class="text-xs text-slate-400">per month</p>
+</td>
+<td class="px-6 py-4 text-center">
+<span class="inline-block w-2 h-2 rounded-full bg-green-500"></span>
+<span class="ml-1 text-xs font-semibold text-slate-700">Active</span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="p-2 text-slate-400 hover:text-blue-600 transition-colors">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-slate-50 transition-colors group">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-purple-100 flex items-center justify-center text-purple-600">
+<span class="material-symbols-outlined" data-icon="palette">palette</span>
+</div>
+<div>
+<p class="font-semibold text-slate-900">Visual Identity Design</p>
+<p class="text-xs text-slate-400 mt-0.5">ID: SRV-8821</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="px-3 py-1 bg-slate-100 text-slate-600 text-xs font-bold rounded-full">One-time</span>
+</td>
+<td class="px-6 py-4 text-sm text-slate-600 font-medium">Design Services</td>
+<td class="px-6 py-4 text-right">
+<p class="font-bold text-slate-900">R$ 4.800,00</p>
+<p class="text-xs text-slate-400">flat fee</p>
+</td>
+<td class="px-6 py-4 text-center">
+<span class="inline-block w-2 h-2 rounded-full bg-green-500"></span>
+<span class="ml-1 text-xs font-semibold text-slate-700">Active</span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="p-2 text-slate-400 hover:text-blue-600 transition-colors">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-slate-50 transition-colors group">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-orange-100 flex items-center justify-center text-orange-600">
+<span class="material-symbols-outlined" data-icon="campaign">campaign</span>
+</div>
+<div>
+<p class="font-semibold text-slate-900">Social Media Management</p>
+<p class="text-xs text-slate-400 mt-0.5">ID: SRV-3310</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="px-3 py-1 bg-blue-100 text-blue-700 text-xs font-bold rounded-full">Recurring</span>
+</td>
+<td class="px-6 py-4 text-sm text-slate-600 font-medium">Marketing</td>
+<td class="px-6 py-4 text-right">
+<p class="font-bold text-slate-900">R$ 1.200,00</p>
+<p class="text-xs text-slate-400">per month</p>
+</td>
+<td class="px-6 py-4 text-center">
+<span class="inline-block w-2 h-2 rounded-full bg-orange-400"></span>
+<span class="ml-1 text-xs font-semibold text-slate-700">Paused</span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="p-2 text-slate-400 hover:text-blue-600 transition-colors">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-slate-50 transition-colors group">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-teal-100 flex items-center justify-center text-teal-600">
+<span class="material-symbols-outlined" data-icon="code">code</span>
+</div>
+<div>
+<p class="font-semibold text-slate-900">Front-end Development</p>
+<p class="text-xs text-slate-400 mt-0.5">ID: SRV-4491</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="px-3 py-1 bg-slate-100 text-slate-600 text-xs font-bold rounded-full">One-time</span>
+</td>
+<td class="px-6 py-4 text-sm text-slate-600 font-medium">Development</td>
+<td class="px-6 py-4 text-right">
+<p class="font-bold text-slate-900">R$ 85,00</p>
+<p class="text-xs text-slate-400">per hour</p>
+</td>
+<td class="px-6 py-4 text-center">
+<span class="inline-block w-2 h-2 rounded-full bg-green-500"></span>
+<span class="ml-1 text-xs font-semibold text-slate-700">Active</span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="p-2 text-slate-400 hover:text-blue-600 transition-colors">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="hover:bg-slate-50 transition-colors group">
+<td class="px-6 py-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-slate-100 flex items-center justify-center text-slate-600">
+<span class="material-symbols-outlined" data-icon="description">description</span>
+</div>
+<div>
+<p class="font-semibold text-slate-900">SEO Audit &amp; Report</p>
+<p class="text-xs text-slate-400 mt-0.5">ID: SRV-1102</p>
+</div>
+</div>
+</td>
+<td class="px-6 py-4">
+<span class="px-3 py-1 bg-slate-100 text-slate-600 text-xs font-bold rounded-full">One-time</span>
+</td>
+<td class="px-6 py-4 text-sm text-slate-600 font-medium">Marketing</td>
+<td class="px-6 py-4 text-right">
+<p class="font-bold text-slate-900">R$ 950,00</p>
+<p class="text-xs text-slate-400">flat fee</p>
+</td>
+<td class="px-6 py-4 text-center">
+<span class="inline-block w-2 h-2 rounded-full bg-slate-300"></span>
+<span class="ml-1 text-xs font-semibold text-slate-700">Draft</span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="p-2 text-slate-400 hover:text-blue-600 transition-colors">
+<span class="material-symbols-outlined" data-icon="more_vert">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Pagination -->
+<div class="px-6 py-4 border-t border-slate-100 flex items-center justify-between text-sm text-slate-500">
+<p>Showing 1 to 5 of 42 entries</p>
+<div class="flex items-center gap-2">
+<button class="px-3 py-1 border border-slate-200 rounded-md hover:bg-slate-50 transition-colors">Previous</button>
+<button class="w-8 h-8 flex items-center justify-center bg-blue-600 text-white rounded-md">1</button>
+<button class="w-8 h-8 flex items-center justify-center hover:bg-slate-100 rounded-md">2</button>
+<button class="w-8 h-8 flex items-center justify-center hover:bg-slate-100 rounded-md">3</button>
+<button class="px-3 py-1 border border-slate-200 rounded-md hover:bg-slate-50 transition-colors">Next</button>
+</div>
+</div>
+</div>
+<!-- Contextual Info / Upsell Card -->
+<div class="bg-primary-fixed p-8 rounded-2xl flex flex-col md:flex-row items-center gap-8 relative overflow-hidden">
+<div class="flex-1 z-10">
+<h3 class="text-2xl font-black text-on-primary-fixed mb-2">Automate your service billing</h3>
+<p class="text-on-primary-fixed-variant max-w-md opacity-90">Set up automatic invoicing for your recurring services and never miss a payment again. Integration with Stripe and Pix enabled.</p>
+<button class="mt-6 bg-primary text-white font-bold py-3 px-8 rounded-xl shadow-lg hover:bg-on-primary-fixed-variant transition-all">
+                        Learn more about automation
+                    </button>
+</div>
+<div class="hidden md:block w-64 h-48 relative z-10">
+<img alt="Dashboard data visualization mockup" class="rounded-xl shadow-2xl rotate-3" data-alt="close-up of a modern data visualization dashboard on a tablet with glowing blue charts and clean minimalist interface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7oyCPywkJvvMfu8m8bUKo2Rm2NscwKsAJot9xkI41WgFifw4QPiUm0fV0Xh5ZQTSPshS_5MLcXt2ZmmDV2cLnj52XhIMfHrqhJ6U6YPRboCcodFmFRKTi9ldisakWh_gjIcXGhDZdnOaeFtV4POA2cr__2rCCLFx1fBkOk7AFlqJo4ULQkjcIIo6xbPyG5X4HZH08xfLiXDy3S0C7tszGL-ZIL4ag9g1-ZgOdJRi7HVkOZbUP31UJ1Q2Chm632I8AjRUsgChMiTM"/>
+</div>
+<!-- Decorative element -->
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary-fixed-dim/30 rounded-full blur-3xl -mr-32 -mt-32"></div>
+</div>
+</div>
+</main>
+</body></html>

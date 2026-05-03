@@ -58,7 +58,7 @@ class QuoteModel extends BaseModel
     {
         $quote = $this->db->query("
             SELECT q.*, c.name as client_name, c.nuit as client_nuit, 
-                   c.email as client_email, c.address as client_address,
+                   c.email as client_email, c.phone as client_phone, c.address as client_address,
                    u.name as created_by_name
             FROM quotes q
             JOIN clients c ON q.client_id = c.id

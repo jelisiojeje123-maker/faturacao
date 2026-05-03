@@ -28,7 +28,7 @@ require_once __DIR__ . '/../../views/partials/head.php';
                     <div class="relative group">
                         <div class="w-32 h-32 rounded-full overflow-hidden border-4 border-slate-50 bg-slate-100 shadow-inner flex items-center justify-center">
                             <?php if (!empty($user['avatar'])): ?>
-                                <img src="/Sistema%20de%20Faturacao/assets/img/avatars/<?= $user['avatar'] ?>" 
+                                <img src="/faturacao/assets/img/avatars/<?= $user['avatar'] ?>" 
                                      class="w-full h-full object-cover" id="avatar-preview">
                             <?php else: ?>
                                 <span class="text-4xl font-black text-slate-300"><?= getInitials($user['name']) ?></span>
@@ -127,7 +127,7 @@ require_once __DIR__ . '/../../views/partials/head.php';
 
 <?php require_once __DIR__ . '/../../views/partials/footer.php'; ?>
 <script>
-const BASE = '/Sistema%20de%20Faturacao';
+const BASE = '/faturacao';
 
 document.getElementById('profile-form').addEventListener('submit', async function(e) {
     e.preventDefault();

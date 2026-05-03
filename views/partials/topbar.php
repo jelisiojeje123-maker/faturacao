@@ -4,7 +4,7 @@
  * $pageTitle deve ser definida na view
  */
 $pageTitle = $pageTitle ?? 'Dashboard';
-$base = '/Sistema%20de%20Faturacao';
+$base = '/faturacao';
 $flash = getFlash();
 ?>
 <header class="bg-white border-b border-slate-100 shadow-sm sticky top-0 z-40 flex items-center justify-between px-6 py-3 w-full">

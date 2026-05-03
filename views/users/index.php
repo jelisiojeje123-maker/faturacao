@@ -150,7 +150,7 @@ require_once __DIR__ . '/../../views/partials/head.php';
 
 <?php require_once __DIR__ . '/../../views/partials/footer.php'; ?>
 <script>
-const BASE = '/Sistema%20de%20Faturacao';
+const BASE = '/faturacao';
 
 function openModal(id) {
     const m = document.getElementById(id);

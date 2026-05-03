@@ -106,7 +106,7 @@
 
     <!-- Actions -->
     <div class="max-w-[800px] mx-auto mt-8 flex justify-between no-print">
-        <a href="/Sistema%20de%20Faturacao/pagamentos.php" class="flex items-center gap-2 text-slate-500 hover:text-slate-900 font-semibold transition-colors">
+        <a href="/faturacao/pagamentos.php" class="flex items-center gap-2 text-slate-500 hover:text-slate-900 font-semibold transition-colors">
             <span class="material-symbols-outlined">arrow_back</span>
             Voltar à lista
         </a>

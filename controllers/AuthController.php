@@ -21,7 +21,7 @@ class AuthController
     public function showLogin(): void
     {
         if (isAuthenticated()) {
-            redirect('/Sistema%20de%20Faturacao/index.php');
+            redirect('/faturacao/index.php');
         }
         require_once __DIR__ . '/../views/auth/login.php';
     }
@@ -32,7 +32,7 @@ class AuthController
         // Verificar CSRF
         if (!verifyCsrfToken($_POST[CSRF_TOKEN_NAME] ?? '')) {
             setFlash('error', 'Token de segurança inválido. Tente novamente.');
-            redirect('/Sistema%20de%20Faturacao/login.php');
+            redirect('/faturacao/login.php');
         }
 
         $email    = sanitize($_POST['email'] ?? '');
@@ -41,14 +41,14 @@ class AuthController
         // Validação básica
         if (empty($email) || empty($password)) {
             setFlash('error', 'Email e senha são obrigatórios.');
-            redirect('/Sistema%20de%20Faturacao/login.php');
+            redirect('/faturacao/login.php');
         }
 
         $user = $this->userModel->authenticate($email, $password);
 
         if (!$user) {
             setFlash('error', 'Credenciais inválidas. Verifique o email e a senha.');
-            redirect('/Sistema%20de%20Faturacao/login.php');
+            redirect('/faturacao/login.php');
         }
 
         // Regenerar sessão para prevenir session fixation
@@ -61,7 +61,7 @@ class AuthController
         $_SESSION['logged_in_at'] = time();
 
         setFlash('success', 'Bem-vindo(a), ' . $user['name'] . '!');
-        redirect('/Sistema%20de%20Faturacao/index.php');
+        redirect('/faturacao/index.php');
     }
 
     /** Logout */
@@ -73,6 +73,6 @@ class AuthController
             setcookie(session_name(), '', time() - 42000, $p['path'], $p['domain'], $p['secure'], $p['httponly']);
         }
         session_destroy();
-        redirect('/Sistema%20de%20Faturacao/login.php');
+        redirect('/faturacao/login.php');
     }
 }

@@ -16,7 +16,7 @@ class SettingsController
         requireAuth();
         if ($_SESSION['user_role'] !== 'admin') {
             setFlash('error', 'Acesso negado. Apenas administradores podem aceder às configurações.');
-            redirect('/Sistema%20de%20Faturacao/index.php');
+            redirect('/faturacao/index.php');
         }
         $this->db = Database::getInstance();
     }

@@ -27,7 +27,7 @@ require_once __DIR__ . '/../../views/partials/head.php';
                     <div class="relative group">
                         <div class="w-40 h-28 rounded-xl overflow-hidden border-2 border-slate-50 bg-slate-100 shadow-inner flex items-center justify-center p-2">
                             <?php if (!empty($settings['logo'])): ?>
-                                <img src="/Sistema%20de%20Faturacao/assets/img/logo/<?= $settings['logo'] ?>" 
+                                <img src="/faturacao/assets/img/logo/<?= $settings['logo'] ?>" 
                                      class="max-w-full max-h-full object-contain" id="logo-preview">
                             <?php else: ?>
                                 <div class="text-center">
@@ -189,7 +189,7 @@ document.getElementById('settings-form').addEventListener('submit', async functi
 
     try {
         const fd  = new FormData(this);
-        const res = await axios.post('/Sistema%20de%20Faturacao/api/settings.php?action=store', fd);
+        const res = await axios.post('/faturacao/api/settings.php?action=store', fd);
         
         if (res.data.success) {
             sucDiv.textContent = res.data.message;
@@ -220,7 +220,7 @@ async function uploadLogo(input) {
         fd.append('<?= CSRF_TOKEN_NAME ?>', '<?= generateCsrfToken() ?>');
         fd.append('logo', input.files[0]);
         
-        const res = await axios.post('/Sistema%20de%20Faturacao/api/settings.php?action=update_logo', fd, {
+        const res = await axios.post('/faturacao/api/settings.php?action=update_logo', fd, {
             headers: { 'Content-Type': 'multipart/form-data' }
         });
         

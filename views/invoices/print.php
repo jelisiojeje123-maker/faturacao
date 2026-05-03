@@ -38,7 +38,7 @@
                 <div class="flex items-center gap-4">
                     <?php if (!empty($company['logo'])): ?>
                         <div class="bg-white p-2 rounded-xl h-16 w-16 flex items-center justify-center">
-                            <img src="/Sistema%20de%20Faturacao/assets/img/logo/<?= $company['logo'] ?>" class="max-w-full max-h-full object-contain">
+                            <img src="/faturacao/assets/img/logo/<?= $company['logo'] ?>" class="max-w-full max-h-full object-contain">
                         </div>
                     <?php endif; ?>
                     <div>

@@ -19,7 +19,7 @@ function navLink(string $page, string $href, string $icon, string $label, string
     HTML;
 }
 
-$base = '/Sistema%20de%20Faturacao';
+$base = '/faturacao';
 ?>
 <aside class="bg-[#1E293B] fixed left-0 top-0 h-screen w-[260px] border-r border-slate-700/50 shadow-2xl flex flex-col py-6 z-50 hidden md:flex">
     <!-- Logo -->

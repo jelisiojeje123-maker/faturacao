@@ -40,7 +40,7 @@ class QuoteController {
         $quote = $this->model->getWithDetails($id);
         if (!$quote) {
             setFlash('Orçamento não encontrado.', 'error');
-            header('Location: /Sistema%20de%20Faturacao/orcamentos.php');
+            header('Location: /faturacao/orcamentos.php');
             exit;
         }
         require __DIR__ . '/../views/quotes/show.php';

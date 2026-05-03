@@ -22,7 +22,7 @@ require_once __DIR__ . '/../../views/partials/head.php';
                     <h1 class="text-2xl font-black text-slate-900">Faturas</h1>
                     <p class="text-slate-500 text-sm mt-1"><?= number_format($total) ?> faturas no sistema</p>
                 </div>
-                <a href="/Sistema%20de%20Faturacao/criar-fatura.php"
+                <a href="/faturacao/criar-fatura.php"
                    class="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-5 py-2.5 rounded-xl transition-all active:scale-95 text-sm shadow-lg shadow-blue-600/20">
                     <span class="material-symbols-outlined text-[18px]">add</span>
                     Nova Fatura
@@ -79,7 +79,7 @@ require_once __DIR__ . '/../../views/partials/head.php';
                         <?php foreach ($items as $inv): ?>
                         <tr class="hover:bg-slate-50 transition-colors group">
                             <td class="px-6 py-4">
-                                <a href="/Sistema%20de%20Faturacao/faturas.php?id=<?= $inv['id'] ?>"
+                                <a href="/faturacao/faturas.php?id=<?= $inv['id'] ?>"
                                    class="font-mono text-blue-600 hover:underline text-xs font-semibold">
                                     <?= htmlspecialchars($inv['invoice_number']) ?>
                                 </a>
@@ -107,11 +107,11 @@ require_once __DIR__ . '/../../views/partials/head.php';
                             </td>
                             <td class="px-6 py-4 text-right">
                                 <div class="flex items-center justify-end gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
-                                    <a href="/Sistema%20de%20Faturacao/faturas.php?id=<?= $inv['id'] ?>"
+                                    <a href="/faturacao/faturas.php?id=<?= $inv['id'] ?>"
                                        class="p-1.5 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all" title="Ver detalhes">
                                         <span class="material-symbols-outlined text-[18px]">open_in_new</span>
                                     </a>
-                                    <a href="/Sistema%20de%20Faturacao/faturas.php?action=print&id=<?= $inv['id'] ?>" target="_blank"
+                                    <a href="/faturacao/faturas.php?action=print&id=<?= $inv['id'] ?>" target="_blank"
                                        class="p-1.5 text-slate-400 hover:text-slate-700 hover:bg-slate-100 rounded-lg transition-all" title="Imprimir/PDF">
                                         <span class="material-symbols-outlined text-[18px]">print</span>
                                     </a>
@@ -220,7 +220,7 @@ require_once __DIR__ . '/../../views/partials/head.php';
 
 <?php require_once __DIR__ . '/../../views/partials/footer.php'; ?>
 <script>
-const BASE = '/Sistema%20de%20Faturacao';
+const BASE = '/faturacao';
 const CSRF = document.querySelector('meta[name="csrf-token"]').content;
 
 function openPaymentModal(invoiceId, invoiceNumber, amountDue) {

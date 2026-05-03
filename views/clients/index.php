@@ -4,11 +4,9 @@
  */
 $pageTitle   = 'Clientes';
 $currentPage = 'clients';
+$extraHead = '<meta name="csrf-token" content="' . generateCsrfToken() . '">';
 require_once __DIR__ . '/../../views/partials/head.php';
 ?>
-<meta name="csrf-token" content="<?= generateCsrfToken() ?>">
-</head>
-<body class="bg-slate-50 text-slate-900 antialiased">
 <div class="flex">
     <?php require_once __DIR__ . '/../../views/partials/sidebar.php'; ?>
     <main class="md:ml-[260px] flex-1 flex flex-col min-h-screen">
@@ -48,7 +46,7 @@ require_once __DIR__ . '/../../views/partials/head.php';
                         Filtrar
                     </button>
                     <?php if (!empty($search) || !empty($status)): ?>
-                    <a href="/Sistema%20de%20Faturacao/clientes.php" class="px-4 py-2.5 border border-slate-200 rounded-xl text-sm text-slate-600 hover:bg-slate-50 transition-all flex items-center gap-1">
+                    <a href="/faturacao/clientes.php" class="px-4 py-2.5 border border-slate-200 rounded-xl text-sm text-slate-600 hover:bg-slate-50 transition-all flex items-center gap-1">
                         <span class="material-symbols-outlined text-[16px]">close</span> Limpar
                     </a>
                     <?php endif; ?>
@@ -107,7 +105,7 @@ require_once __DIR__ . '/../../views/partials/head.php';
                                             class="p-1.5 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all" title="Editar">
                                         <span class="material-symbols-outlined text-[18px]">edit</span>
                                     </button>
-                                    <a href="/Sistema%20de%20Faturacao/faturas.php?client_id=<?= $client['id'] ?>"
+                                    <a href="/faturacao/faturas.php?client_id=<?= $client['id'] ?>"
                                        class="p-1.5 text-slate-400 hover:text-slate-700 hover:bg-slate-100 rounded-lg transition-all" title="Ver Faturas">
                                         <span class="material-symbols-outlined text-[18px]">description</span>
                                     </a>
@@ -229,26 +227,31 @@ require_once __DIR__ . '/../../views/partials/head.php';
 <?php require_once __DIR__ . '/../../views/partials/footer.php'; ?>
 
 <script>
-const BASE = '/Sistema%20de%20Faturacao';
-const CSRF = document.querySelector('meta[name="csrf-token"]').content;
+const BASE = '/faturacao';
+const metaCsrfToken = document.querySelector('meta[name="csrf-token"]');
+const CSRF = metaCsrfToken ? metaCsrfToken.content : '';
 
-function openClientModal(client = null) {
-    document.getElementById('client-modal').classList.replace('hidden','flex');
+function openClientModal(client) {
+    var modal = document.getElementById('client-modal');
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
     document.getElementById('modal-title').textContent = client ? 'Editar Cliente' : 'Novo Cliente';
-    document.getElementById('client-id').value = client?.id ?? '';
-    document.getElementById('f-name').value   = client?.name ?? '';
-    document.getElementById('f-nuit').value   = client?.nuit ?? '';
-    document.getElementById('f-email').value  = client?.email ?? '';
-    document.getElementById('f-phone').value  = client?.phone ?? '';
-    document.getElementById('f-city').value   = client?.city ?? '';
-    document.getElementById('f-address').value = client?.address ?? '';
-    document.getElementById('f-status').value = client?.status ?? 'ativo';
-    document.getElementById('f-notes').value  = client?.notes ?? '';
+    document.getElementById('client-id').value = client && client.id ? client.id : '';
+    document.getElementById('f-name').value   = client && client.name ? client.name : '';
+    document.getElementById('f-nuit').value   = client && client.nuit ? client.nuit : '';
+    document.getElementById('f-email').value  = client && client.email ? client.email : '';
+    document.getElementById('f-phone').value  = client && client.phone ? client.phone : '';
+    document.getElementById('f-city').value   = client && client.city ? client.city : '';
+    document.getElementById('f-address').value = client && client.address ? client.address : '';
+    document.getElementById('f-status').value = client && client.status ? client.status : 'ativo';
+    document.getElementById('f-notes').value  = client && client.notes ? client.notes : '';
     document.getElementById('form-error').classList.add('hidden');
 }
 
 function closeClientModal() {
-    document.getElementById('client-modal').classList.replace('flex','hidden');
+    var modal = document.getElementById('client-modal');
+    modal.classList.remove('flex');
+    modal.classList.add('hidden');
 }
 
 function editClient(client) { openClientModal(client); }

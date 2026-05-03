@@ -4,7 +4,7 @@
  * $pageTitle e $extraHead podem ser definidos na view
  */
 $pageTitle = $pageTitle ?? 'FaturaMZ Pro';
-$base = '/Sistema%20de%20Faturacao';
+$base = '/faturacao';
 ?>
 <!DOCTYPE html>
 <html lang="pt-MZ">

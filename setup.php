@@ -2,7 +2,7 @@
 /**
  * FaturaMZ Pro — Script de Configuração Inicial
  * Executar UMA VEZ após importar o schema.sql
- * URL: http://localhost/Sistema%20de%20Faturacao/setup.php
+ * URL: http://localhost/faturacao/setup.php
  *
  * APAGAR este ficheiro após a configuração!
  */
@@ -162,7 +162,7 @@ if ($success) {
         </div>
 
         <div class="flex gap-3">
-            <a href="/Sistema%20de%20Faturacao/login.php"
+            <a href="/faturacao/login.php"
                class="flex-1 text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-3.5 rounded-xl transition-all">
                 🚀 Entrar no Sistema
             </a>

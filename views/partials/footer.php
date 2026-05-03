@@ -36,7 +36,8 @@ function showToast(message, type = 'success') {
         warning: 'warning',
     };
     const toast = document.createElement('div');
-    toast.className = `toast pointer-events-auto flex items-center gap-3 px-4 py-3 rounded-xl text-white text-sm font-semibold shadow-lg ${colors[type] ?? colors.info} min-w-[280px] max-w-[380px]`;
+    var typeClass = colors[type] ? colors[type] : colors.info;
+    toast.className = 'toast pointer-events-auto flex items-center gap-3 px-4 py-3 rounded-xl text-white text-sm font-semibold shadow-lg ' + typeClass + ' min-w-[280px] max-w-[380px]';
     toast.innerHTML = `
         <span class="material-symbols-outlined text-[20px]">${icons[type]}</span>
         <span class="flex-1">${message}</span>
@@ -47,7 +48,8 @@ function showToast(message, type = 'success') {
 }
 
 // CSRF token para requisições AJAX
-const CSRF_TOKEN = document.querySelector('meta[name="csrf-token"]')?.content ?? '';
+const metaCsrf = document.querySelector('meta[name="csrf-token"]');
+const CSRF_TOKEN = metaCsrf ? metaCsrf.content : '';
 
 // Axios defaults
 axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
@@ -65,7 +67,8 @@ document.getElementById('sidebar-toggle')?.addEventListener('click', openMobileS
 
 // Confirmar eliminação
 function confirmDelete(message, onConfirm) {
-    if (confirm(message ?? 'Tem a certeza que deseja eliminar este registo?')) {
+    var msg = message ? message : 'Tem a certeza que deseja eliminar este registo?';
+    if (confirm(msg)) {
         onConfirm();
     }
 }

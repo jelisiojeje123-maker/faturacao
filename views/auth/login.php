@@ -77,7 +77,7 @@
             <?php endif; ?>
 
             <!-- Login form -->
-            <form method="POST" action="/Sistema%20de%20Faturacao/login.php" class="space-y-5" id="login-form">
+            <form method="POST" action="/faturacao/login.php" class="space-y-5" id="login-form">
                 <?= csrfField() ?>
 
                 <!-- Email -->
@@ -130,7 +130,7 @@
                 <p>Email: <code class="text-blue-600">admin@empresa.mz</code></p>
                 <p>Senha: <code class="text-blue-600">admin123</code></p>
                 <p class="mt-2 pt-2 border-t border-slate-200">
-                    Primeira vez? <a href="/Sistema%20de%20Faturacao/setup.php" class="text-blue-600 font-semibold hover:underline">Executar setup.php →</a>
+                    Primeira vez? <a href="/faturacao/setup.php" class="text-blue-600 font-semibold hover:underline">Executar setup.php →</a>
                 </p>
             </div>
         </div>

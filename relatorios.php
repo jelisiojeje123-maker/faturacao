@@ -69,7 +69,7 @@ if (isset($_GET['print'])) {
     exit;
 }
 
-require_once __DIR__ . '/../views/partials/head.php';
+require_once __DIR__ . '/views/partials/head.php';
 ?>
 <meta name="csrf-token" content="<?= generateCsrfToken() ?>">
 <style>
@@ -84,9 +84,9 @@ require_once __DIR__ . '/../views/partials/head.php';
 </head>
 <body class="bg-slate-50 text-slate-900 antialiased">
 <div class="flex">
-    <?php require_once __DIR__ . '/../views/partials/sidebar.php'; ?>
+    <?php require_once __DIR__ . '/views/partials/sidebar.php'; ?>
     <main class="md:ml-[260px] flex-1 flex flex-col min-h-screen">
-        <?php require_once __DIR__ . '/../views/partials/topbar.php'; ?>
+        <?php require_once __DIR__ . '/views/partials/topbar.php'; ?>
 
         <div class="p-6 lg:p-8 max-w-[1600px] w-full mx-auto space-y-6">
 
@@ -257,7 +257,7 @@ require_once __DIR__ . '/../views/partials/head.php';
                             <?php foreach ($invoices as $inv): ?>
                             <tr class="hover:bg-slate-50 transition-colors">
                                 <td class="px-6 py-3">
-                                    <a href="/Sistema%20de%20Faturacao/faturas.php?id=<?= $inv['id'] ?>"
+                                    <a href="/faturacao/faturas.php?id=<?= $inv['id'] ?>"
                                        class="font-mono text-xs text-blue-600 hover:underline font-semibold">
                                         <?= htmlspecialchars($inv['invoice_number']) ?>
                                     </a>
@@ -298,7 +298,7 @@ require_once __DIR__ . '/../views/partials/head.php';
     </main>
 </div>
 
-<?php require_once __DIR__ . '/../views/partials/footer.php'; ?>
+<?php require_once __DIR__ . '/views/partials/footer.php'; ?>
 <script>
 new Chart(document.getElementById('statusChart'), {
     type: 'doughnut',

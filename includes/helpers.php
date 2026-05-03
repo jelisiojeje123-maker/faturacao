@@ -99,7 +99,7 @@ function isAdmin(): bool
 function requireAuth(): void
 {
     if (!isAuthenticated()) {
-        redirect('/Sistema%20de%20Faturacao/login.php');
+        redirect('/faturacao/login.php');
     }
 }
 
@@ -110,7 +110,7 @@ function requireAdmin(): void
 {
     requireAuth();
     if (!isAdmin()) {
-        redirect('/Sistema%20de%20Faturacao/index.php?error=acesso_negado');
+        redirect('/faturacao/index.php?error=acesso_negado');
     }
 }
 

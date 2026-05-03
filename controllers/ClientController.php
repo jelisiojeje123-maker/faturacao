@@ -38,7 +38,7 @@ class ClientController
         $client = $this->model->findById($id);
         if (!$client) {
             setFlash('error', 'Cliente não encontrado.');
-            redirect('/Sistema%20de%20Faturacao/clientes.php');
+            redirect('/faturacao/clientes.php');
         }
         $stats    = $this->model->getStats($id);
         $invoices = (new \InvoiceModel())->getList(1, 10, '', '', $id)['items'];

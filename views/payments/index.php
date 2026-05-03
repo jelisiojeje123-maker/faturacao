@@ -22,7 +22,7 @@ require_once __DIR__ . '/../../views/partials/head.php';
                     <h1 class="text-2xl font-black text-slate-900">Pagamentos</h1>
                     <p class="text-slate-500 text-sm mt-1"><?= number_format($total) ?> pagamentos registados</p>
                 </div>
-                <a href="/Sistema%20de%20Faturacao/faturas.php"
+                <a href="/faturacao/faturas.php"
                    class="flex items-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-5 py-2.5 rounded-xl transition-all active:scale-95 text-sm shadow-lg shadow-emerald-600/20">
                     <span class="material-symbols-outlined text-[18px]">payments</span>
                     Registar Pagamento
@@ -88,7 +88,7 @@ require_once __DIR__ . '/../../views/partials/head.php';
                         Filtrar
                     </button>
                     <?php if (!empty($search) || !empty($method)): ?>
-                    <a href="/Sistema%20de%20Faturacao/pagamentos.php"
+                    <a href="/faturacao/pagamentos.php"
                        class="px-4 py-2.5 border border-slate-200 rounded-xl text-sm text-slate-600 hover:bg-slate-50 flex items-center gap-1">
                         <span class="material-symbols-outlined text-[16px]">close</span> Limpar
                     </a>
@@ -120,7 +120,7 @@ require_once __DIR__ . '/../../views/partials/head.php';
                                 </span>
                             </td>
                             <td class="px-6 py-4">
-                                <a href="/Sistema%20de%20Faturacao/faturas.php?id=<?= $pmt['invoice_id'] ?>"
+                                <a href="/faturacao/faturas.php?id=<?= $pmt['invoice_id'] ?>"
                                    class="font-mono text-xs text-blue-600 hover:underline font-semibold">
                                     <?= htmlspecialchars($pmt['invoice_number']) ?>
                                 </a>
@@ -155,7 +155,7 @@ require_once __DIR__ . '/../../views/partials/head.php';
                             </td>
                             <td class="px-6 py-4 text-right">
                                 <div class="flex items-center justify-end gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
-                                    <a href="/Sistema%20de%20Faturacao/recibo.php?id=<?= $pmt['id'] ?>" target="_blank"
+                                    <a href="/faturacao/recibo.php?id=<?= $pmt['id'] ?>" target="_blank"
                                        class="p-1.5 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all"
                                        title="Imprimir Recibo">
                                         <span class="material-symbols-outlined text-[18px]">print</span>
@@ -175,7 +175,7 @@ require_once __DIR__ . '/../../views/partials/head.php';
                         <tr><td colspan="8" class="px-6 py-16 text-center text-slate-400">
                             <span class="material-symbols-outlined text-4xl block mb-2 text-slate-300">payments</span>
                             Nenhum pagamento encontrado.
-                            <a href="/Sistema%20de%20Faturacao/faturas.php" class="block mt-2 text-blue-600 font-semibold text-sm hover:underline">
+                            <a href="/faturacao/faturas.php" class="block mt-2 text-blue-600 font-semibold text-sm hover:underline">
                                 Ir para Faturas para registar um pagamento →
                             </a>
                         </td></tr>
@@ -204,7 +204,7 @@ require_once __DIR__ . '/../../views/partials/head.php';
 
 <?php require_once __DIR__ . '/../../views/partials/footer.php'; ?>
 <script>
-const BASE = '/Sistema%20de%20Faturacao';
+const BASE = '/faturacao';
 const CSRF = document.querySelector('meta[name="csrf-token"]').content;
 
 function deletePayment(id, receipt) {

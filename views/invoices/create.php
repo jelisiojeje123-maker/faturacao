@@ -223,7 +223,7 @@ require_once __DIR__ . '/../../views/partials/head.php';
 <?php require_once __DIR__ . '/../../views/partials/footer.php'; ?>
 
 <script>
-const BASE  = '/Sistema%20de%20Faturacao';
+const BASE  = '/faturacao';
 const CSRF  = document.querySelector('meta[name="csrf-token"]').content;
 const IVA   = <?= $ivaRate ?>;
 let itemCount = 0;

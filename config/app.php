@@ -13,7 +13,7 @@ define('DB_CHARSET', 'utf8mb4');
 
 // Configurações da aplicação
 define('APP_NAME', 'FaturaMZ Pro');
-define('APP_URL', 'http://localhost/Sistema%20de%20Faturacao');
+define('APP_URL', 'http://localhost/faturacao');
 define('APP_VERSION', '1.0.0');
 define('APP_TIMEZONE', 'Africa/Maputo');
 

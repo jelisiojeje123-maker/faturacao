@@ -22,7 +22,7 @@ require_once __DIR__ . '/../../views/partials/head.php';
                     <h1 class="text-2xl font-black text-slate-900">Orçamentos</h1>
                     <p class="text-slate-500 text-sm mt-1"><?= number_format($total) ?> orçamentos e propostas</p>
                 </div>
-                <a href="/Sistema%20de%20Faturacao/criar-orcamento.php"
+                <a href="/faturacao/criar-orcamento.php"
                    class="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-5 py-2.5 rounded-xl transition-all active:scale-95 text-sm shadow-lg shadow-blue-600/20">
                     <span class="material-symbols-outlined text-[18px]">add</span>
                     Novo Orçamento
@@ -51,7 +51,7 @@ require_once __DIR__ . '/../../views/partials/head.php';
                         Filtrar
                     </button>
                     <?php if (!empty($search) || !empty($status)): ?>
-                    <a href="/Sistema%20de%20Faturacao/orcamentos.php" class="px-4 py-2.5 text-slate-500 hover:text-slate-700 text-sm font-medium flex items-center">
+                    <a href="/faturacao/orcamentos.php" class="px-4 py-2.5 text-slate-500 hover:text-slate-700 text-sm font-medium flex items-center">
                         Limpar
                     </a>
                     <?php endif; ?>
@@ -76,7 +76,7 @@ require_once __DIR__ . '/../../views/partials/head.php';
                         <?php foreach ($items as $quote): ?>
                         <tr class="hover:bg-slate-50 transition-colors group">
                             <td class="px-6 py-4">
-                                <a href="/Sistema%20de%20Faturacao/orcamentos.php?id=<?= $quote['id'] ?>"
+                                <a href="/faturacao/orcamentos.php?id=<?= $quote['id'] ?>"
                                    class="font-mono text-blue-600 hover:underline text-xs font-semibold">
                                     <?= htmlspecialchars($quote['quote_number']) ?>
                                 </a>
@@ -112,11 +112,11 @@ require_once __DIR__ . '/../../views/partials/head.php';
                             </td>
                             <td class="px-6 py-4 text-right">
                                 <div class="flex items-center justify-end gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
-                                    <a href="/Sistema%20de%20Faturacao/orcamentos.php?id=<?= $quote['id'] ?>"
+                                    <a href="/faturacao/orcamentos.php?id=<?= $quote['id'] ?>"
                                        class="p-1.5 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all" title="Ver detalhes">
                                         <span class="material-symbols-outlined text-[18px]">open_in_new</span>
                                     </a>
-                                    <a href="/Sistema%20de%20Faturacao/orcamentos.php?action=print&id=<?= $quote['id'] ?>" target="_blank"
+                                    <a href="/faturacao/orcamentos.php?action=print&id=<?= $quote['id'] ?>" target="_blank"
                                        class="p-1.5 text-slate-400 hover:text-slate-700 hover:bg-slate-100 rounded-lg transition-all" title="Imprimir/PDF">
                                         <span class="material-symbols-outlined text-[18px]">print</span>
                                     </a>

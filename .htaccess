@@ -1,0 +1,42 @@
+# ===================================================
+# FaturaMZ Pro — Apache Configuration
+# ===================================================
+
+# Desactivar listagem de directórios
+Options -Indexes
+
+# Seguir symlinks
+Options +FollowSymLinks
+
+# Charset UTF-8 por defeito
+AddDefaultCharset UTF-8
+
+# Proteger ficheiros de configuração e SQL
+<FilesMatch "\.(sql|log|env|ini|config)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Proteger directório config/
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^config/ - [F,L]
+    RewriteRule ^database/ - [F,L]
+</IfModule>
+
+# Cache de assets estáticos
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType text/css         "access plus 1 week"
+    ExpiresByType application/javascript "access plus 1 week"
+    ExpiresByType image/png        "access plus 1 month"
+    ExpiresByType image/jpeg       "access plus 1 month"
+    ExpiresByType image/svg+xml    "access plus 1 month"
+</IfModule>
+
+# Headers de segurança básicos
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>

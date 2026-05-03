@@ -21,30 +21,24 @@
    ========================================================= */
 
 // Toast
+// SweetAlert2 Toast configuration
+const Toast = Swal.mixin({
+    toast: true,
+    position: 'top-end',
+    showConfirmButton: false,
+    timer: 4000,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+        toast.addEventListener('mouseenter', Swal.stopTimer)
+        toast.addEventListener('mouseleave', Swal.resumeTimer)
+    }
+});
+
 function showToast(message, type = 'success') {
-    const container = document.getElementById('toast-container');
-    const colors = {
-        success: 'bg-emerald-500',
-        error:   'bg-rose-500',
-        info:    'bg-blue-500',
-        warning: 'bg-amber-500',
-    };
-    const icons = {
-        success: 'check_circle',
-        error:   'error',
-        info:    'info',
-        warning: 'warning',
-    };
-    const toast = document.createElement('div');
-    var typeClass = colors[type] ? colors[type] : colors.info;
-    toast.className = 'toast pointer-events-auto flex items-center gap-3 px-4 py-3 rounded-xl text-white text-sm font-semibold shadow-lg ' + typeClass + ' min-w-[280px] max-w-[380px]';
-    toast.innerHTML = `
-        <span class="material-symbols-outlined text-[20px]">${icons[type]}</span>
-        <span class="flex-1">${message}</span>
-        <button onclick="this.parentElement.remove()" class="opacity-70 hover:opacity-100 ml-2">✕</button>
-    `;
-    container.appendChild(toast);
-    setTimeout(() => toast.remove(), 5000);
+    Toast.fire({
+        icon: type,
+        title: message
+    });
 }
 
 // CSRF token para requisições AJAX
@@ -66,11 +60,28 @@ function closeMobileSidebar() {
 document.getElementById('sidebar-toggle')?.addEventListener('click', openMobileSidebar);
 
 // Confirmar eliminação
+// Confirmar eliminação com SweetAlert2
 function confirmDelete(message, onConfirm) {
-    var msg = message ? message : 'Tem a certeza que deseja eliminar este registo?';
-    if (confirm(msg)) {
-        onConfirm();
-    }
+    Swal.fire({
+        title: 'Tem a certeza?',
+        text: message || 'Esta acção não poderá ser desfeita.',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#2563eb',
+        cancelButtonColor: '#64748b',
+        confirmButtonText: 'Sim, eliminar!',
+        cancelButtonText: 'Cancelar',
+        reverseButtons: true,
+        customClass: {
+            popup: 'rounded-2xl',
+            confirmButton: 'rounded-xl font-bold px-6 py-3',
+            cancelButton: 'rounded-xl font-bold px-6 py-3'
+        }
+    }).then((result) => {
+        if (result.isConfirmed) {
+            onConfirm();
+        }
+    });
 }
 
 // Formatar valor em MT

@@ -48,6 +48,9 @@ $base = '/faturacao';
     <!-- Chart.js (para o dashboard) -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <style>
         body { font-family: 'Inter', sans-serif; }
         .material-symbols-outlined {

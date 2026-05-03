@@ -361,10 +361,10 @@ async function submitQuote(overrideStatus = null) {
     }
 
     try {
-        const res = await axios.post('api/quotes.php?action=store', fd);
+        const res = await axios.post(`${BASE}/api/quotes?action=store`, fd);
         if (res.data.success) {
             showToast(`Orçamento criado com sucesso!`);
-            setTimeout(() => window.location.href = `${BASE}/orcamentos.php`, 1200);
+            setTimeout(() => window.location.href = `${BASE}/orcamentos`, 1200);
         } else {
             showToast(res.data.message, 'error');
         }

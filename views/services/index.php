@@ -233,7 +233,7 @@ function deleteService(id, name) {
         try {
             const fd = new FormData();
             fd.append('<?= CSRF_TOKEN_NAME ?>', CSRF);
-            const res = await axios.post(`${BASE}/api/services.php?id=${id}&action=delete`, fd);
+            const res = await axios.post(`${BASE}/api/services?id=${id}&action=delete`, fd);
             if (res.data.success) { showToast('Serviço eliminado!'); setTimeout(()=>location.reload(), 700); }
             else showToast(res.data.message, 'error');
         } catch(e) { showToast('Erro ao eliminar.','error'); }
@@ -248,7 +248,7 @@ document.getElementById('service-form').addEventListener('submit', async functio
     try {
         const fd = new FormData(this);
         if (!document.getElementById('svc-iva-exempt').checked) fd.set('iva_exempt','0');
-        const url = id ? `${BASE}/api/services.php?id=${id}&action=update` : `${BASE}/api/services.php?action=store`;
+        const url = id ? `${BASE}/api/services?id=${id}&action=update` : `${BASE}/api/services?action=store`;
         const res = await axios.post(url, fd);
         if (res.data.success) { showToast(res.data.message); closeServiceModal(); setTimeout(()=>location.reload(),700); }
         else { err.textContent = res.data.message; err.classList.remove('hidden'); }

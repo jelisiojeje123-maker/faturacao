@@ -262,7 +262,7 @@ function deleteClient(id, name) {
             const fd = new FormData();
             fd.append('<?= CSRF_TOKEN_NAME ?>', CSRF);
             fd.append('_method', 'DELETE');
-            const res = await axios.post(`${BASE}/api/clients.php?id=${id}&action=delete`, fd);
+            const res = await axios.post(`${BASE}/api/clients?id=${id}&action=delete`, fd);
             if (res.data.success) { showToast('Cliente eliminado!'); setTimeout(()=>location.reload(), 800); }
             else showToast(res.data.message, 'error');
         } catch(e) { showToast('Erro ao eliminar.', 'error'); }
@@ -279,7 +279,7 @@ document.getElementById('client-form').addEventListener('submit', async function
 
     try {
         const fd = new FormData(this);
-        const url = id ? `${BASE}/api/clients.php?id=${id}&action=update` : `${BASE}/api/clients.php?action=store`;
+        const url = id ? `${BASE}/api/clients?id=${id}&action=update` : `${BASE}/api/clients?action=store`;
         const res = await axios.post(url, fd);
 
         if (res.data.success) {

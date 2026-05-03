@@ -364,7 +364,7 @@ document.getElementById('payment-form')?.addEventListener('submit', async functi
     errDiv.classList.add('hidden');
     try {
         const fd  = new FormData(this);
-        const res = await axios.post(`${BASE}/api/payments.php?action=store`, fd);
+        const res = await axios.post(`${BASE}/api/payments?action=store`, fd);
         if (res.data.success) {
             showToast(`Pagamento registado! Recibo: ${res.data.data.receipt_number}`);
             closePaymentModal();
@@ -384,7 +384,7 @@ async function changeStatus(status) {
         const fd = new FormData();
         fd.append('<?= CSRF_TOKEN_NAME ?>', CSRF);
         fd.append('status', status);
-        const res = await axios.post(`${BASE}/api/invoices.php?action=change_status&id=<?= $invoice['id'] ?>`, fd);
+        const res = await axios.post(`${BASE}/api/invoices?action=change_status&id=<?= $invoice['id'] ?>`, fd);
         if (res.data.success) {
             showToast('Estado actualizado!');
             setTimeout(() => location.reload(), 700);

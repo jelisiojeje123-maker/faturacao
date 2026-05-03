@@ -125,14 +125,14 @@
             </form>
 
             <!-- Demo credentials hint -->
-            <div class="mt-6 p-4 bg-slate-50 rounded-xl border border-slate-200 text-xs text-slate-500">
+            <!-- <div class="mt-6 p-4 bg-slate-50 rounded-xl border border-slate-200 text-xs text-slate-500">
                 <p class="font-semibold text-slate-700 mb-1">Credenciais padrão (após setup):</p>
                 <p>Email: <code class="text-blue-600">admin@empresa.mz</code></p>
                 <p>Senha: <code class="text-blue-600">admin123</code></p>
                 <p class="mt-2 pt-2 border-t border-slate-200">
                     Primeira vez? <a href="/faturacao/setup" class="text-blue-600 font-semibold hover:underline">Executar setup →</a>
                 </p>
-            </div>
+           </div> -->
         </div>
     </div>
 

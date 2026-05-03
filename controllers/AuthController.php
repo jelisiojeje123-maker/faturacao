@@ -21,7 +21,7 @@ class AuthController
     public function showLogin(): void
     {
         if (isAuthenticated()) {
-            redirect('/faturacao/index.php');
+            redirect('/faturacao/index');
         }
         require_once __DIR__ . '/../views/auth/login.php';
     }
@@ -32,7 +32,7 @@ class AuthController
         // Verificar CSRF
         if (!verifyCsrfToken($_POST[CSRF_TOKEN_NAME] ?? '')) {
             setFlash('error', 'Token de segurança inválido. Tente novamente.');
-            redirect('/faturacao/login.php');
+            redirect('/faturacao/login');
         }
 
         $email    = sanitize($_POST['email'] ?? '');
@@ -41,14 +41,14 @@ class AuthController
         // Validação básica
         if (empty($email) || empty($password)) {
             setFlash('error', 'Email e senha são obrigatórios.');
-            redirect('/faturacao/login.php');
+            redirect('/faturacao/login');
         }
 
         $user = $this->userModel->authenticate($email, $password);
 
         if (!$user) {
             setFlash('error', 'Credenciais inválidas. Verifique o email e a senha.');
-            redirect('/faturacao/login.php');
+            redirect('/faturacao/login');
         }
 
         // Regenerar sessão para prevenir session fixation
@@ -61,7 +61,7 @@ class AuthController
         $_SESSION['logged_in_at'] = time();
 
         setFlash('success', 'Bem-vindo(a), ' . $user['name'] . '!');
-        redirect('/faturacao/index.php');
+        redirect('/faturacao/index');
     }
 
     /** Logout */
@@ -73,6 +73,6 @@ class AuthController
             setcookie(session_name(), '', time() - 42000, $p['path'], $p['domain'], $p['secure'], $p['httponly']);
         }
         session_destroy();
-        redirect('/faturacao/login.php');
+        redirect('/faturacao/login');
     }
 }

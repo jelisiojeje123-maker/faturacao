@@ -63,7 +63,7 @@ class InvoiceController
         $invoice = $this->model->findWithDetails($id);
         if (!$invoice) {
             setFlash('error', 'Fatura não encontrada.');
-            redirect('/faturacao/faturas.php');
+            redirect('/faturacao/faturas');
         }
 
         $company = Database::getInstance()->query(

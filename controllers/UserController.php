@@ -17,7 +17,7 @@ class UserController
         requireAuth();
         if ($_SESSION['user_role'] !== 'admin') {
             setFlash('error', 'Acesso negado.');
-            redirect('/faturacao/index.php');
+            redirect('/faturacao/index');
         }
         $this->model = new UserModel();
     }

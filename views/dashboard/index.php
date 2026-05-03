@@ -44,7 +44,7 @@ require_once __DIR__ . '/../../views/partials/head.php';
                         <p class="text-xs text-blue-100">Alguns clientes estão à espera da sua proposta comercial.</p>
                     </div>
                 </div>
-                <a href="/faturacao/orcamentos.php?status=enviado" 
+                <a href="/faturacao/orcamentos?status=enviado" 
                    class="bg-white text-blue-600 px-4 py-2 rounded-xl text-xs font-bold hover:bg-blue-50 transition-colors">
                     Ver Orçamentos
                 </a>
@@ -141,7 +141,7 @@ require_once __DIR__ . '/../../views/partials/head.php';
                     <?php else: ?>
                     <div class="space-y-3 flex-1">
                         <?php foreach ($dueSoon as $due): ?>
-                        <a href="/faturacao/faturas.php?id=<?= $due['id'] ?>"
+                        <a href="/faturacao/faturas?id=<?= $due['id'] ?>"
                            class="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-50 transition-colors border border-transparent hover:border-slate-100">
                             <div class="w-9 h-9 rounded-full bg-slate-100 flex items-center justify-center text-xs font-bold text-slate-600 shrink-0">
                                 <?= getInitials($due['client_name']) ?>
@@ -161,7 +161,7 @@ require_once __DIR__ . '/../../views/partials/head.php';
                     </div>
                     <?php endif; ?>
 
-                    <a href="/faturacao/faturas.php"
+                    <a href="/faturacao/faturas"
                        class="mt-4 text-center text-xs font-bold text-blue-600 hover:underline">
                         Ver todas as faturas →
                     </a>
@@ -172,7 +172,7 @@ require_once __DIR__ . '/../../views/partials/head.php';
             <div class="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden">
                 <div class="px-6 py-4 border-b border-slate-100 flex items-center justify-between">
                     <h3 class="font-bold text-slate-900">Faturas Recentes</h3>
-                    <a href="/faturacao/faturas.php" class="text-xs font-semibold text-blue-600 hover:underline">Ver todas</a>
+                    <a href="/faturacao/faturas" class="text-xs font-semibold text-blue-600 hover:underline">Ver todas</a>
                 </div>
                 <div class="overflow-x-auto">
                     <table class="w-full text-sm">
@@ -206,7 +206,7 @@ require_once __DIR__ . '/../../views/partials/head.php';
                                     </span>
                                 </td>
                                 <td class="px-6 py-4 text-right">
-                                    <a href="/faturacao/faturas.php?id=<?= $inv['id'] ?>"
+                                    <a href="/faturacao/faturas?id=<?= $inv['id'] ?>"
                                        class="text-slate-400 hover:text-blue-600 transition-colors">
                                         <span class="material-symbols-outlined text-[18px]">open_in_new</span>
                                     </a>
@@ -214,7 +214,7 @@ require_once __DIR__ . '/../../views/partials/head.php';
                             </tr>
                             <?php endforeach; ?>
                             <?php if (empty($recentInvoices)): ?>
-                            <tr><td colspan="6" class="px-6 py-12 text-center text-slate-400 text-sm">Nenhuma fatura ainda. <a href="/faturacao/criar-fatura.php" class="text-blue-600 font-semibold">Criar a primeira →</a></td></tr>
+                            <tr><td colspan="6" class="px-6 py-12 text-center text-slate-400 text-sm">Nenhuma fatura ainda. <a href="/faturacao/criar-fatura" class="text-blue-600 font-semibold">Criar a primeira →</a></td></tr>
                             <?php endif; ?>
                         </tbody>
                     </table>

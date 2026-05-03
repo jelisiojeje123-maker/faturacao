@@ -46,7 +46,7 @@ require_once __DIR__ . '/../../views/partials/head.php';
                         Filtrar
                     </button>
                     <?php if (!empty($search) || !empty($status)): ?>
-                    <a href="/faturacao/clientes.php" class="px-4 py-2.5 border border-slate-200 rounded-xl text-sm text-slate-600 hover:bg-slate-50 transition-all flex items-center gap-1">
+                    <a href="/faturacao/clientes" class="px-4 py-2.5 border border-slate-200 rounded-xl text-sm text-slate-600 hover:bg-slate-50 transition-all flex items-center gap-1">
                         <span class="material-symbols-outlined text-[16px]">close</span> Limpar
                     </a>
                     <?php endif; ?>
@@ -105,7 +105,7 @@ require_once __DIR__ . '/../../views/partials/head.php';
                                             class="p-1.5 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-all" title="Editar">
                                         <span class="material-symbols-outlined text-[18px]">edit</span>
                                     </button>
-                                    <a href="/faturacao/faturas.php?client_id=<?= $client['id'] ?>"
+                                    <a href="/faturacao/faturas?client_id=<?= $client['id'] ?>"
                                        class="p-1.5 text-slate-400 hover:text-slate-700 hover:bg-slate-100 rounded-lg transition-all" title="Ver Faturas">
                                         <span class="material-symbols-outlined text-[18px]">description</span>
                                     </a>

@@ -17,11 +17,26 @@ AddDefaultCharset UTF-8
     Deny from all
 </FilesMatch>
 
-# Proteger directório config/
 <IfModule mod_rewrite.c>
     RewriteEngine On
+    RewriteBase /faturacao/
+
+    # Proteger ficheiros/pastas de sistema
     RewriteRule ^config/ - [F,L]
     RewriteRule ^database/ - [F,L]
+
+    # Forçar URLs sem a extensão .php no browser (Redirecionamento 301)
+    RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/faturacao/([^.]+)\.php [NC]
+    RewriteRule ^(.*)\.php$ $1 [R=301,L]
+
+    # Roteamento de URLs Amigáveis:
+    # Se o ficheiro ou diretório não existir fisicamente...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    # E se existir um ficheiro .php correspondente ao pedido...
+    RewriteCond %{DOCUMENT_ROOT}/faturacao/$1.php -f
+    # Então redireciona internamente para o ficheiro .php
+    RewriteRule ^(.*)$ $1.php [L]
 </IfModule>
 
 # Cache de assets estáticos

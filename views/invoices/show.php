@@ -19,12 +19,12 @@ require_once __DIR__ . '/../../views/partials/head.php';
             <!-- Breadcrumb + Actions -->
             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                 <div class="flex items-center gap-3 text-sm text-slate-500">
-                    <a href="/faturacao/faturas.php" class="hover:text-blue-600 transition-colors">Faturas</a>
+                    <a href="/faturacao/faturas" class="hover:text-blue-600 transition-colors">Faturas</a>
                     <span class="material-symbols-outlined text-[14px]">chevron_right</span>
                     <span class="font-semibold text-slate-900 font-mono"><?= htmlspecialchars($invoice['invoice_number']) ?></span>
                 </div>
                 <div class="flex items-center gap-2">
-                    <a href="/faturacao/faturas.php?action=print&id=<?= $invoice['id'] ?>" target="_blank"
+                    <a href="/faturacao/faturas?action=print&id=<?= $invoice['id'] ?>" target="_blank"
                        class="flex items-center gap-2 px-4 py-2 border border-slate-200 bg-white text-slate-600 rounded-xl text-sm font-semibold hover:bg-slate-50 transition-all">
                         <span class="material-symbols-outlined text-[18px]">print</span>
                         Imprimir / PDF
@@ -43,6 +43,7 @@ require_once __DIR__ . '/../../views/partials/head.php';
                         Anular Fatura
                     </button>
                     <?php endif; ?>
+                <?php endif; ?>
                 </div>
             </div>
 
@@ -274,7 +275,7 @@ require_once __DIR__ . '/../../views/partials/head.php';
                                     <?php if ($pmt['receipt_number']): ?>
                                     <div class="flex items-center justify-between">
                                         <p class="text-[10px] text-slate-400">Recibo: <?= htmlspecialchars($pmt['receipt_number']) ?></p>
-                                        <a href="/faturacao/recibo.php?id=<?= $pmt['id'] ?>" target="_blank"
+                                        <a href="/faturacao/recibo?id=<?= $pmt['id'] ?>" target="_blank"
                                            class="text-[10px] font-bold text-blue-600 hover:underline flex items-center gap-1">
                                             <span class="material-symbols-outlined text-[12px]">print</span>
                                             Ver Recibo

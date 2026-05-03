@@ -1,0 +1,96 @@
+================================================================================
+                    MANUAL DO UTILIZADOR - FATURAMZ PRO
+================================================================================
+
+Benvindo ao FaturaMZ Pro, o seu sistema de gestão de faturação e orçamentação
+desenhado especificamente para o mercado moçambicano.
+
+--------------------------------------------------------------------------------
+1. VISÃO GERAL DO SISTEMA
+--------------------------------------------------------------------------------
+O FaturaMZ Pro permite gerir o ciclo completo de vendas da sua empresa:
+- Gestão de Clientes (Base de dados centralizada)
+- Catálogo de Serviços (Preços e taxas pré-definidas)
+- Orçamentos (Propostas comerciais com conversão automática)
+- Faturação (Emissão de faturas com IVA e Retenção na Fonte)
+- Controlo de Pagamentos (Registo de recebimentos e saldos em dívida)
+- Dashboard Estatístico (Análise de performance em tempo real)
+
+--------------------------------------------------------------------------------
+2. DASHBOARD (PAINEL PRINCIPAL)
+--------------------------------------------------------------------------------
+Ao entrar no sistema, verá um resumo financeiro:
+- Total Faturado: Soma de todas as faturas emitidas.
+- Valor Recebido: Total de pagamentos registados.
+- Pendente/Vencido: Valores que ainda aguardam pagamento.
+- Gráficos Mensais: Evolução das vendas nos últimos 12 meses.
+- Alertas de Vencimento: Faturas que expiram nos próximos 7 dias.
+
+--------------------------------------------------------------------------------
+3. GESTÃO DE CLIENTES
+--------------------------------------------------------------------------------
+No menu "Clientes", pode:
+- Adicionar novos clientes com NUIT, Email, Telefone e Morada.
+- Visualizar o histórico de faturas de cada cliente.
+- Editar ou remover registos (apenas se não houver documentos associados).
+
+--------------------------------------------------------------------------------
+4. CATÁLOGO DE SERVIÇOS
+--------------------------------------------------------------------------------
+Para agilizar a faturação, registe os seus serviços comuns:
+- Nome do serviço.
+- Preço base.
+- Isenção de IVA (se aplicável).
+Ao criar uma fatura ou orçamento, poderá selecionar estes itens rapidamente.
+
+--------------------------------------------------------------------------------
+5. ORÇAMENTOS
+--------------------------------------------------------------------------------
+- Criação: Selecione o cliente e adicione os itens. Pode definir uma data de 
+  validade para a proposta.
+- Estados: Rascunho, Enviado, Aceite, Recusado ou Expirado.
+- Conversão: Uma vez que o cliente aceite o orçamento, pode convertê-lo 
+  automaticamente numa FATURA com apenas um clique.
+
+--------------------------------------------------------------------------------
+6. FATURAÇÃO
+--------------------------------------------------------------------------------
+- Emissão: O sistema gera números de fatura sequenciais automaticamente.
+- Impostos: Calcula automaticamente o IVA (16%) e permite aplicar Retenção na 
+  Fonte (ex: IRPC 5% ou IRPS 20%) conforme a necessidade.
+- PDF: Visualize e imprima faturas profissionais prontas para enviar ao cliente.
+
+--------------------------------------------------------------------------------
+7. PAGAMENTOS E RECIBOS
+--------------------------------------------------------------------------------
+Para cada fatura emitida, pode registar pagamentos:
+- Pagamento Total: A fatura passa automaticamente ao estado "PAGA".
+- Pagamento Parcial: O sistema mantém o registo do "Saldo em Dívida".
+- Histórico: Visualize todos os pagamentos associados a uma fatura específica.
+
+--------------------------------------------------------------------------------
+8. CONFIGURAÇÕES DA EMPRESA
+--------------------------------------------------------------------------------
+Aceda ao menu de definições para personalizar:
+- Nome da Empresa, NUIT e Contactos.
+- Logotipo (aparecerá nos PDFs).
+- Dados Bancários (para inclusão automática nas faturas).
+- Taxa de IVA e Prefixo de documentos.
+
+--------------------------------------------------------------------------------
+9. SEGURANÇA E UTILIZADORES
+--------------------------------------------------------------------------------
+- Perfis: O sistema suporta Administradores (acesso total) e Operadores 
+  (apenas faturação).
+- Proteção: Todas as ações sensíveis são protegidas contra ataques de 
+  segurança comuns (CSRF).
+
+--------------------------------------------------------------------------------
+DICAS ÚTEIS:
+- Use as URLs amigáveis (ex: /faturacao/clientes em vez de clientes.php).
+- Verifique sempre o NUIT do cliente para garantir conformidade fiscal.
+- Em caso de dúvida, contacte o suporte técnico.
+
+================================================================================
+FaturaMZ Pro - Eficiência na sua gestão.
+Gerado em: 03 de Maio de 2026.
